@@ -9,6 +9,6 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_existence_of
-    asssert_instance_of Enigma, @enigma
+    assert_instance_of Enigma, @enigma
   end
 end
