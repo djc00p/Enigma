@@ -9,4 +9,9 @@ class Key
     keys[:D_key] = @generated_number[3..4].to_i
     keys
   end
+
+  def date_squared
+    date = "040895"
+    date.to_i ** 2
+  end
 end
