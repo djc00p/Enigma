@@ -22,4 +22,9 @@ class KeyTest < Minitest::Test
     }
     assert_equal expected, @key.keys
   end
+  def test_getting_squared_value_of_the_date
+    assert_equal 1672401025, @key.date_squared
+
+  end
+
 end
