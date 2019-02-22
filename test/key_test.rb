@@ -14,16 +14,19 @@ class KeyTest < Minitest::Test
 
   def test_keys_are_seperated_from_generated_number
     expected = {
-      A_key: Integer,
+      A_key: 02,
       B_key: 27,
       C_key: 71,
       D_key: 15
     }
-    assert_equal expected, @key.keys
+    assert_instance_of Integer, @key.keys[:A_key]
+    assert_instance_of Integer, @key.keys[:B_key]
+    assert_instance_of Integer, @key.keys[:C_key]
+    assert_instance_of Integer, @key.keys[:D_key]
   end
 
   def test_getting_squared_value_of_the_date
-    assert_equal "1672401025", @key.date_squared
+    assert_instance_of String, @key.date_squared
   end
 
   def test_offset_values_are_set_as_the_last_four_of_date_squarred
@@ -33,7 +36,10 @@ class KeyTest < Minitest::Test
       C_offset: 2,
       D_offset: 5
     }
-    assert_equal expected, @key.offsets
+    assert_instance_of Integer, @key.offsets[:A_offset]
+    assert_instance_of Integer, @key.offsets[:B_offset]
+    assert_instance_of Integer, @key.offsets[:C_offset]
+    assert_instance_of Integer, @key.offsets[:D_offset]
   end
 
   def test_final_shifts_for_encryption
@@ -43,6 +49,9 @@ class KeyTest < Minitest::Test
       C: 73,
       D: 20
     }
-    assert_equal expected, @key.final_shifts
+    assert_instance_of Integer, @key.final_shifts[:A]
+    assert_instance_of Integer, @key.final_shifts[:B]
+    assert_instance_of Integer, @key.final_shifts[:C]
+    assert_instance_of Integer, @key.final_shifts[:D]
   end
 end
