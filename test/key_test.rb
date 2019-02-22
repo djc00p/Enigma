@@ -21,9 +21,11 @@ class KeyTest < Minitest::Test
     }
     assert_equal expected, @key.keys
   end
+  
   def test_getting_squared_value_of_the_date
-    assert_equal 1672401025, @key.date_squared
+    assert_equal "1672401025", @key.date_squared
   end
+
   def test_offset_values_are_set_as_the_last_four_of_date_squarred
     expected = {
       A_offset: 1,
@@ -31,7 +33,6 @@ class KeyTest < Minitest::Test
       C_offset: 2,
       D_offset: 5
     }
-
     assert_equal expected, @key.offsets
   end
 end
