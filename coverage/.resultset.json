@@ -3,11 +3,23 @@
     "coverage": {
       "/Users/djc00p/turing/1_module/projects/Enigma/lib/enigma.rb": [
         1,
+        1,
         null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/djc00p/turing/1_module/projects/Enigma/lib/generate_num.rb": [
+        1,
+        1,
+        2,
         null,
         null
       ]
     },
-    "timestamp": 1550788901
+    "timestamp": 1550861757
   }
 }
