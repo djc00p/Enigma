@@ -1,4 +1,4 @@
 class Enigma
 
-  
+
 end
