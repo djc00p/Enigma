@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/encryption'
+require './lib/key'
 require 'pry'
 
 class EncryptionTest < Minitest::Test
@@ -16,5 +17,9 @@ class EncryptionTest < Minitest::Test
     expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
      "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
      assert_equal expected, @encryption.character_set
+  end
+
+  def test_change_of_letter_from_character_set_array
+    assert_equal "e" , @encryption.letter_shift
   end
 end
