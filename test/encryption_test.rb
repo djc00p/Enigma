@@ -20,6 +20,6 @@ class EncryptionTest < Minitest::Test
   end
 
   def test_change_of_letter_from_character_set_array
-    assert_equal "e" , @encryption.letter_shift
+    assert_equal "hsk" , @encryption.letter_shift
   end
 end
