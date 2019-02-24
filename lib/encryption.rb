@@ -5,7 +5,11 @@ class Encryption
 
   def letter_shift
     number = 4
-    letter = "a"
-    character_set[character_set.index(letter)+number]
+    words = "dog"
+    new_word = ""
+    words.each_char do |letter|
+    new_word << character_set[character_set.index(letter)+number]
+    end
+    return new_word
   end
 end
