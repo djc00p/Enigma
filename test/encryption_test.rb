@@ -22,4 +22,11 @@ class EncryptionTest < Minitest::Test
   def test_change_of_letter_from_character_set_array
     assert_equal "hsk" , @encryption.letter_shift
   end
+
+  def test_to_get_an_index_that_wont_be_greater_than_26
+    assert_equal 8, @encryption.letter_index(" ", 34)
+    assert_equal 24, @encryption.letter_index("m", 90)
+    assert_equal 16, @encryption.letter_index("b", 15)
+    assert_equal 12, @encryption.letter_index("h", 5)
+  end
 end
