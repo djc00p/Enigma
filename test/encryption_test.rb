@@ -20,7 +20,11 @@ class EncryptionTest < Minitest::Test
   end
 
   def test_change_of_letter_from_character_set_array
-    assert_equal "xlmwemwee iwsqi" , @encryption.letter_shift
+    assert_equal "xlmwemwee iwsqi" , @encryption.letter_shift("This is awesome", 4)
+  end
+
+  def test_it_will_keep_character_not_in_character_set
+    assert_equal "lipps,em'qehisrxi!" , @encryption.letter_shift("Hello, I'm Deonte!", 4)
   end
 
   def test_to_get_an_index_that_wont_be_greater_than_26
