@@ -3,14 +3,16 @@ class Encryption
     ("a".."z").to_a << " "
   end
 
-  def letter_shift
-    number = 4
-    words = "This is awesome"
-    new_word = ""
-    words.downcase.each_char do |letter|
-    new_word << character_set[letter_index(letter,number)]
+  def letter_shift(message, number)
+    new_message = ""
+    message.downcase.each_char do |letter|
+      if character_set.index(letter).nil?
+        new_message << letter
+      else
+        new_message << character_set[letter_index(letter,number)]
+      end
     end
-    return new_word
+    return new_message
   end
 
   def letter_index(letter,number)
