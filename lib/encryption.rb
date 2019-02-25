@@ -8,35 +8,30 @@ class Encryption
       D: 20
     }
   end
-  def character_set
+  def characters
     ("a".."z").to_a << " "
   end
 
-  def self.encrypt_message(message)
-    new_message = String.new
+  def encrypt_message(message)
     key_values = key.values
+    new_message = String.new
     message.downcase.each_char do |letter|
       new_number = key_values.first
       new_message  << letter_shift(letter, new_number)
-      key_values.rotate!
+      characters.index(letter).nil? ? key_values.rotate(0) : key_values.rotate!
     end
     new_message
   end
 
   def letter_shift(letter, number)
-    if character_set.index(letter).nil?
+    if characters.index(letter).nil?
       letter
     else
-      character_set[letter_index(letter,number)]
+      characters.rotate(letter_index(letter,number)).first
     end
   end
 
   def letter_index(letter,number)
-    index = character_set.index(letter) + number
-    while index >= character_set.length
-      index
-      index -= character_set.length
-    end
-    index
+   characters.index(letter) + number
   end
 end
