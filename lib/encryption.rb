@@ -1,13 +1,5 @@
+module Encryption
 
-class Encryption
-  def key
-     {
-      A: 3,
-      B: 27,
-      C: 73,
-      D: 20
-    }
-  end
   def characters
     ("a".."z").to_a << " "
   end
